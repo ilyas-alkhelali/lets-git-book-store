@@ -1,0 +1,20 @@
+﻿@model Lets.Models.Book
+
+<h2>Книга: @Model.Title</h2>
+<div>
+    <dl >
+        <dt>Автор</dt>
+        <dd>@Model.Author</dd>
+
+        <dt>Страниц</dt>
+        <dd>@Model.Pages</dd>
+
+        <dt>Картинка</dt>
+        <dd><img src="@Model.img" alt="@Model.Title" /></dd>
+        <dt>Дата выпуска
+        <dd>@Model.Publication</dd>
+
+
+    </dl>
+</div>
+    

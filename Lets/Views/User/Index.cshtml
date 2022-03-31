@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Lets.Models.Book>
+@{
+    ViewBag.Title = "Catalogy";
+}
+<h1>Book</h1>
+<table class="table">
+    <tr>
+    <td>Название</td>
+    <td>Картинка</td>
+     <td></td>
+    </tr>
+    @foreach (var book in Model)
+    {
+<tr>
+    <td>@book.Title</td>
+    <td><img src="@book.img" alt="@book.Title"/></td>
+    <td>
+        <a asp-action="About" asp-controller="User" asp-route-id="@book.Id">Подробнее</a> |
+    </td>
+</tr>
+    }
+</table>

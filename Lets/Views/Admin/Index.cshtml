@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Lets.Models.Book>
+@{
+    ViewBag.Title = "BookList";
+}
+<h1>Book</h1>
+<a asp-action="Create">Создать</a>
+<table class="table">
+    <tr><td>Название</td><td>Автор</td><td>Страниц</td><td>Картинка</td>
+    <td>Дата выпуска</td><td>Инструменты</td></tr>
+    @foreach (var book in Model)
+    {
+<tr>
+    <td>@book.Title</td>
+    <td>@book.Author</td>
+    <td>@book.Pages</td>
+    <td><img src="@book.img" alt="@book.Title" /> </td>
+    <td>@book.Publication</td>
+ 
+    <td> |
+        <a asp-action="Edit" asp-controller="Admin" asp-route-id="@book.Id">Изменить</a> |
+        <a asp-action="Delete" asp-controller="Admin" asp-route-id="@book.Id">Удалить</a>
+    </td>
+</tr>
+    }
+</table>
